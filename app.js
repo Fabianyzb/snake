@@ -37,10 +37,10 @@ const changeDirection = (e) => {
   } else if (e.key === "ArrowDown" && velocityY != -1) {
     velocityX = 0;
     velocityY = 1;
-  } else if (e.key === "ArrowLeft" && velocityY != 1) {
+  } else if (e.key === "ArrowLeft" && velocityX != 1) {
     velocityX = -1;
     velocityY = 0;
-  } else if (e.key === "ArrowRight" && velocityY != -1) {
+  } else if (e.key === "ArrowRight" && velocityX != -1) {
     velocityX = 1;
     velocityY = 0;
   }
@@ -48,7 +48,7 @@ const changeDirection = (e) => {
 
 controls.forEach(key => {
   //Calling changeDirection on each key click and passing key dataset value as an object
-  key.addEventListener("click", () => changeDirection({ key: key.dataset.key }));
+  key.addEventListener("click", () => changeDirection({ key:key.dataset.key }));
 });
 
 const initGame = () => {
